@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Predict Genre</title>
+    <link rel="stylesheet" href={% static "assets/bootstrap/css/bootstrap.min.css"%}>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href={% static "assets/fonts/font-awesome.min.css"%}>
+    <link rel="stylesheet" href={% static "assets/fonts/simple-line-icons.min.css"%}>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href={% static "assets/css/style_overlay2.css"%}>
+    <link rel="stylesheet" href={% static "assets/css/vanilla-zoom.min.css"%}>
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+        <div class="container"><a class="navbar-brand logo" href="#">Genre Forecast</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href={% url 'Home'%}>Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href={% url 'about'%}>About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href={% url 'predict'%}>Predict Genre</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page pricing-table-page">
+        <section class="clean-block clean-pricing dark">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-9 col-lg-8">
+    
+    
+                    <section class="clean-block clean-form dark">
+                        <div class="container">
+                            <div class="block-heading">
+                                <h2 class="text-info">Predict the genre</h2>
+                                <p>The system is able to predict 10 international genre which includes Electronic, Anime, Jazz, Alternative, Country Rap, Blues, Rock, Classical and Hip-Hop.</p>
+                                <br>
+                                <p>Enter the details below to find out the genre:</p>
+                            </div>
+                            <div>
+                                <p class="fs-1">Result: {{predictedValue}}</p>
+                            </div>
+                            <form action = {% url "predictMusic"%} method="post">
+                                {% csrf_token %}
+                                <div class="mb-3"><label class="form-label" for="name">Popularity</label><input class="form-control" type="text" id="name" placeholder="float" name="popularity" required></div>
+                                <div class="mb-3"><label class="form-label" for="name">Acousticness</label><input class="form-control" type="text" id="name" placeholder="float" name="acousticness" required></div>
+                                <div class="mb-3"><label class="form-label" for="name">Danceability</label><input class="form-control" type="text" id="name" placeholder="float" name="danceability" required></div>
+                                <div class="mb-3"><label class="form-label" for="name">Duration_ms</label><input class="form-control" type="text" id="name" placeholder="float" name="duration_ms" required></div>
+                                <div class="mb-3"><label class="form-label" for="name">Energy</label><input class="form-control" type="text" id="name" placeholder="float" name="energy" required></div>
+                                <div class="mb-3"><label class="form-label" for="name">Instrumentalness</label><input class="form-control" type="text" id="name" placeholder="float" name="instrumentalness" required></div>
+                                <div class="mb-3"><label class="form-label" for="name">Liveness</label><input class="form-control" type="text" id="name" placeholder="float" name="liveness" required></div>
+                                <div class="mb-3"><label class="form-label" for="name">Loudness</label><input class="form-control" type="text" id="name" placeholder="float" name="loudness" required></div>
+                                <div class="mb-3"><label class="form-label" for="name">Speechiness</label><input class="form-control" type="text" id="name" placeholder="float" name="speechiness" required></div>
+                                <div class="mb-3"><label class="form-label" for="name">Valence</label><input class="form-control" type="text" id="name" placeholder="float" name="valence" required></div>
+                                <div class="mb-3"><label class="form-label" for="name">Key</label><input class="form-control" type="text" id="name" placeholder="String" name="key" required></div>
+                                <div class="mb-3"><button class="btn btn-primary" type="submit">Submit</button></div>
+                                
+                            </form>
+                            <br>
+                        </div>
+                        
+                        
+                    </section>
+    
+    </div>
+</div>
+</div>
+</div>
+
+
+    
+    <script src={% static "assets/bootstrap/js/bootstrap.min.js"%}></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src={% static "assets/js/vanilla-zoom.js"%}></script>
+    <script src={% static "assets/js/theme.js"%}></script>
+    <script src={% static "assets/css/style.css"%}></script>
+</body>
+
+</html>

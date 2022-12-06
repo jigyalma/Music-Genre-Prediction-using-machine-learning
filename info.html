@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Details</title>
+    <link rel="stylesheet" href={% static "assets/bootstrap/css/bootstrap.min.css"%}>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href={% static "assets/fonts/font-awesome.min.css"%}>
+    <link rel="stylesheet" href={% static "assets/fonts/simple-line-icons.min.css"%}>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href={% static "assets/css/style_overlay2.css"%}>
+    <link rel="stylesheet" href={% static "assets/css/vanilla-zoom.min.css"%}>
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+        <div class="container"><a class="navbar-brand logo" href="#">Genre Forecast</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href={% url 'Home'%}>Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href={% url 'about'%}>About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href = {% url 'predict'%}>Predict Genre</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page blog-post">
+        <section class="clean-block clean-post dark">
+            <div class="container">
+                <div class="block-content">
+                    <div class="post-image" style="background-image:url('{% static "assets/img/drum.jpg"%}');"></div>
+                    <div class="post-body">
+                        <h3>Different features used to determine the genre of the song</h3>
+                        <div class="post-info"><span>Popularity</span></div>
+                        <p> This will determine the popularity of the song.</p>
+                
+                        <div class="post-info"><span>Acousticness</span></div>
+                        <p> Songs with higher acousticness are more likely to use acoustic and non-electronic
+                            instruments. Acousticness is measured on a scale of 0 (not acoustic) to 100 (very
+                            acoustic). Acoustic and non-electronic instruments are more likely to be used in songs with a
+                            higher acousticness. The second subplot demonstrates that the majority of songs
+                            and music pieces are not acoustic.</p>
+                
+
+                            <div class="post-info"><span>Danceability</span></div>
+                            <p> The danceability of a track is determined by a combination of musical elements such
+                                as tempo, rhythm, and beat. Songs with a higher danceability have more consistent
+                                and stronger beats. Danceability, like acousticness, is measured on a scale of 0 (low
+                                danceability) to 100 (high danceability) (high danceability).</p>
+                
+                                <div class="post-info"><span>Duration ms</span></div>
+                                <p> Music duration is given in milliseconds. Most samples are not longer than 0.3e6
+                                    (300 000) milliseconds, or 300 seconds, or exactly 5 minutes. Sounds reasonable.</p>
+                        
+                                <div class="post-info"><span>Energy</span></div>
+                                <p> The perceived intensity and activity of a song is measured by energy. Energy is also
+                                measured on a scale of 0 (low energy) to 100 (high energy) (high energy). Higher
+                                energy songs are more intense, dynamic, and loud.</p>
+                
+                                <div class="post-info"><span>Instrumentalness</span></div>
+                                <p> The presence of vocals in a track is predicted by its instrumentality. The level of
+                                    instrumentality is scaled from 0 (probably contains vocal content) to 100. (likely
+                                    contains no vocal content). Instrumental songs are less likely to contain vocals.</p>
+
+                                
+                                <div class="post-image" style="background-image:url(&quot;../static/assets/img/guitar.jpg&quot;);"></div>
+
+
+                                <div class="post-info"><span>Key</span></div>
+                                <p> In classical, Western art, and Western pop music, the key of a piece is the group of
+                                    pitches, or scale, that serves as the foundation of a musical composition.
+                                    </p>
+                
+                                <div class="post-info"><span>Liveness</span></div>
+                                    <p>The presence of an audience in a song is detected by liveness. The level of liveness is
+                                    scaled from 0 (no audience) to 100. (audible audience). Songs with a higher liveness
+                                    have a higher chance of being performed live.</p>
+                
+                                <div class="post-info"><span>Loudness</span></div>
+                                    <p> The decibel level of a song is measured by loudness. Because decibels are relative
+                                        to a reference value, songs with lower loudness values are quieter than songs with
+                                        higher loudness values. </p>
+                
+                                <div class="post-info"><span>Speechiness</span></div>
+                                <p>The presence of spoken words in a song is measured by speechiness. Speechiness is
+                                    measured on a scale of 0 (low speechiness) to 100 (high speechiness) (high speechiness). Songs with a higher level of speechiness are mostly made up of spoken words,
+                                    similar to poetry or a talk show.</p>
+                
+                                <div class="post-info"><span>Tempo</span></div>
+                                <p> The tempo of a song is measured in beats per minute (bpm). Many popular songs
+                                    have tempos ranging from 50 to 200 beats per minute. Songs with a higher tempo
+                                    move faster. </p>
+
+                                <div class="post-info"><span>Valence</span></div>
+                                    <p>Valence assesses a song’s positivity. Valence is measured on a scale of 0 (low valence)
+                                        to 100 (high valence) (high valence). Higher valence songs sound happier and more
+                                        cheerful.</p>
+                
+                            
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="page-footer dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h5>Get started</h5>
+                    <ul>
+                        <li><a href={% url 'Home'%}>Home</a></li>
+                        <li><a href={% url 'about'%}>About</a></li>
+                        <li><a href={% url 'predict'%}>Predict Genre</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p><br>Copyright © Jabchor 2022. <br>All Rights Reserved.<br><i class="icon-social-twitter icon"></i><i class="icon-social-facebook icon"></i><i class="icon-social-instagram icon"></i><br><br></p>
+        </div>
+    </footer>
+    <script src={% static "assets/bootstrap/js/bootstrap.min.js"%}></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src={% static "assets/js/vanilla-zoom.js"%}></script>
+    <script src={% static "assets/js/theme.js"%}></script>
+</body>
+
+</html>

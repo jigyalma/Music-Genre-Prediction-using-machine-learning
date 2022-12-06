@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>About</title>
+    <link rel="stylesheet" href={% static "assets/bootstrap/css/bootstrap.min.css"%}>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href={% static "assets/fonts/font-awesome.min.css"%}>
+    <link rel="stylesheet" href={% static "assets/fonts/simple-line-icons.min.css"%}>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href={% static "assets/css/style_overlay2.css"%}>
+    <link rel="stylesheet" href={% static "assets/css/vanilla-zoom.min.css"%}>
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+        <div class="container"><a class="navbar-brand logo" href="#">Genre Forecast</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href={% url 'Home'%}>Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href={% url 'about'%}>About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href={% url 'predict'%}>Predict Genre</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page blog-post">
+        <section class="clean-block clean-post dark">
+            <div class="container">
+                <div class="block-content">
+                    <div class="post-image" style="background-image:url('{% static "assets/img/music.jpg"%}')"></div>
+                    <div class="post-body">
+                        <h3>Music Genre Prediction Using Machine
+                            Learning </h3>
+
+                        <div class="post-info"><span>Problem Statement</span></div>
+                        <p>The world seems incomplete without music, and with many different songs around the
+                            world, we have different genres of music such as electronic, rap, classical, hip-hop, rigsar,
+                            boedra, tsangmo, and many more. Genre is a category that identifies some pieces of
+                            music as it belongings to a shared tradition or set of conventions. Features that are used
+                            to predict the genre of a music are purely factual and are all are predicted in strict accordance 
+                            with machine learning algorithm, the final result might be sometimes inaccurate.</p>
+                
+                        <div class="post-info"><span>Aims</span></div>
+                            <p>The aim of this project is to build a platform which predicts music into its respective
+                            genre using machine learning.
+                            </p>
+                
+                            <div class="post-info"><span>Scope</span></div>
+                            <p>The system can be used internationally and most probably it will be beneficial to the
+                                music industry, with the aim to classify the music genre.</p>
+
+                            <div class="post-info"><span>Team Members</span></div>
+                            <p>Dorji Letho <br> 12200002</p>
+                            <p>Rinchen Leki <br> 12190017</p>
+                            <p>Sherab Dorji<br> 12200018</p>
+                            <p>Jigme Dema<br> 12200005</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="page-footer dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h5>Get started</h5>
+                    <ul>
+                        <li><a href={% url 'Home'%}>Home</a></li>
+                        <li><a href={% url 'about' %}>About</a></li>
+                        <li><a href={% url 'predict'%}>Predict Genre</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p><br>Copyright © Jabchor 2022. <br>All Rights Reserved.<br><i class="icon-social-twitter icon"></i><i class="icon-social-facebook icon"></i><i class="icon-social-instagram icon"></i><br><br></p>
+        </div>
+    </footer>
+    <script src={% static "assets/bootstrap/js/bootstrap.min.js"%}></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src={% static "assets/js/vanilla-zoom.js"%}></script>
+    <script src={% static "assets/js/theme.js"%}></script>
+</body>
+
+</html>
